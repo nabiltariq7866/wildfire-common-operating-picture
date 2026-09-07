@@ -131,22 +131,72 @@
   background:linear-gradient(145deg,#13262E 0%,#102128 56%,#0E1C22 100%);
 }
 
-/* Sidebar navigation scrolls independently so Settings never collides with the feed card. */
+/* Sidebar navigation scrolls independently, but the scrollbar stays visually hidden. */
 .sidebar-menu-scroll{
   min-height:0;
   overflow-y:auto;
   overscroll-behavior:contain;
-  scrollbar-gutter:stable;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
-.sidebar-menu-scroll::-webkit-scrollbar{width:5px}
-.sidebar-menu-scroll::-webkit-scrollbar-track{background:transparent}
-.sidebar-menu-scroll::-webkit-scrollbar-thumb{
-  background:color-mix(in srgb,var(--accent) 24%,var(--border-primary));
-  border-radius:999px;
-}
-.sidebar-menu-scroll::-webkit-scrollbar-thumb:hover{
-  background:color-mix(in srgb,var(--accent) 40%,var(--border-primary));
+.sidebar-menu-scroll::-webkit-scrollbar{
+  width:0;
+  height:0;
+  display:none;
 }
 
 /* Do not preserve a previous viewport anchor between route layouts. */
 html,body{overflow-anchor:none;}
+
+
+/* Theme-aware tactical map palette */
+:root,.light{
+  --map-bg:#EEF5F6;
+  --map-grid:#C9DADD;
+  --map-grid-opacity:.58;
+  --map-contour:#9DB6BD;
+  --map-contour-soft:#B7C9CE;
+  --map-road:#AFC6CC;
+  --map-water:#78B9C6;
+  --map-label:#425F68;
+  --map-label-strong:#182D34;
+  --map-label-box:rgba(255,255,255,.92);
+  --map-label-box-border:#B7CDD2;
+  --map-aircraft-outline:#F7FCFD;
+  --map-ground-fill:rgba(43,174,131,.14);
+  --map-ground-stroke:#188B6B;
+  --map-glass-bg:rgba(255,255,255,.86);
+  --map-glass-border:rgba(80,118,128,.20);
+  --map-glass-text:#203A43;
+  --map-shadow:0 22px 48px rgba(24,57,67,.10);
+}
+.dark{
+  --map-bg:#081217;
+  --map-grid:#16303A;
+  --map-grid-opacity:.27;
+  --map-contour:#29414A;
+  --map-contour-soft:#213C45;
+  --map-road:#20424B;
+  --map-water:#1C4855;
+  --map-label:#AFC2C8;
+  --map-label-strong:#EDF6F8;
+  --map-label-box:#0C171D;
+  --map-label-box-border:#29434D;
+  --map-aircraft-outline:#EAF8FA;
+  --map-ground-fill:rgba(78,211,168,.13);
+  --map-ground-stroke:#4ED3A8;
+  --map-glass-bg:rgba(2,10,14,.60);
+  --map-glass-border:rgba(220,240,244,.12);
+  --map-glass-text:#C9DBE0;
+  --map-shadow:0 24px 58px rgba(0,0,0,.26);
+}
+.operational-map{
+  background:var(--map-bg);
+  box-shadow:var(--map-shadow);
+}
+.map-glass{
+  border-color:var(--map-glass-border)!important;
+  background:var(--map-glass-bg);
+  color:var(--map-glass-text);
+  backdrop-filter:blur(10px);
+}
