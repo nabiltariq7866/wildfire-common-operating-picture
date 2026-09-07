@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,.light{
+  --bg-primary:#F4F7F8;
+  --bg-secondary:#EAF0F2;
+  --bg-surface:#FFFFFF;
+  --bg-elevated:#FFFFFF;
+  --text-primary:#172329;
+  --text-secondary:#61737B;
+  --text-muted:#84959C;
+  --border-primary:#D8E2E6;
+  --accent:#1096A6;
+  --accent-hover:#17AFC0;
+  --accent-text:#087785;
+  --accent-pressed:#0A7E8C;
+  --success:#2BAE83;
+  --warning:#D9802F;
+  --danger:#E65348;
+  --purple:#7567D9;
+
+  --c-bg-secondary:234 240 242;
+  --c-bg-surface:255 255 255;
+  --c-bg-elevated:255 255 255;
+  --c-text-primary:23 35 41;
+  --c-text-secondary:97 115 123;
+  --c-text-muted:132 149 156;
+  --c-border:216 226 230;
+  --c-accent:16 150 166;
+  --c-success:43 174 131;
+  --c-warning:217 128 47;
+  --c-danger:230 83 72;
+  --c-purple:117 103 217;
+}
+.dark{
+  --bg-primary:#081014;
+  --bg-secondary:#0D181E;
+  --bg-surface:#101C22;
+  --bg-elevated:#16262E;
+  --text-primary:#EDF6F8;
+  --text-secondary:#A9BAC0;
+  --text-muted:#70848C;
+  --border-primary:#1B3038;
+  --accent:#39C6D8;
+  --accent-hover:#59D9E8;
+  --accent-text:#83E7F1;
+  --accent-pressed:#22A8B8;
+  --success:#4ED3A8;
+  --warning:#F2A65A;
+  --danger:#FF6B5F;
+  --purple:#9084F8;
+
+  --c-bg-secondary:13 24 30;
+  --c-bg-surface:16 28 34;
+  --c-bg-elevated:22 38 46;
+  --c-text-primary:237 246 248;
+  --c-text-secondary:169 186 192;
+  --c-text-muted:112 132 140;
+  --c-border:27 48 56;
+  --c-accent:57 198 216;
+  --c-success:78 211 168;
+  --c-warning:242 166 90;
+  --c-danger:255 107 95;
+  --c-purple:144 132 248;
+}
+*{box-sizing:border-box;border-color:var(--border-primary)}html,body,#root{min-height:100%}body{margin:0;background:radial-gradient(circle at 88% -10%,rgba(57,198,216,.07),transparent 28rem),radial-gradient(circle at 10% 110%,rgba(242,166,90,.035),transparent 26rem),var(--bg-primary);color:var(--text-primary);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button{cursor:pointer}::selection{background:rgba(57,198,216,.25)}
+.primary-btn{@apply inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold;color:#041013;border-radius:10px;border:1px solid color-mix(in srgb,var(--accent) 70%,white 4%);background:linear-gradient(135deg,var(--accent) 0%,var(--accent-hover) 100%);box-shadow:0 10px 28px color-mix(in srgb,var(--accent) 18%,transparent);transition:.18s ease}.primary-btn:hover{transform:translateY(-1px);box-shadow:0 14px 34px color-mix(in srgb,var(--accent) 24%,transparent)}.primary-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.secondary-btn{@apply inline-flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-semibold text-ink;border-radius:10px;border:1px solid color-mix(in srgb,var(--border-primary) 76%,transparent);background:color-mix(in srgb,var(--bg-surface) 94%,var(--bg-secondary));transition:.18s ease}.secondary-btn:hover{border-color:color-mix(in srgb,var(--accent) 28%,var(--border-primary));background:var(--bg-surface)}
+.danger-btn{@apply inline-flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-semibold;color:var(--danger);border-radius:10px;border:1px solid color-mix(in srgb,var(--danger) 25%,var(--border-primary));background:color-mix(in srgb,var(--danger) 7%,var(--bg-surface))}
+.field{width:100%;border-radius:10px;border:1px solid color-mix(in srgb,var(--border-primary) 78%,transparent);background:color-mix(in srgb,var(--bg-surface) 94%,var(--bg-secondary));color:var(--text-primary);padding:10px 12px;outline:none;transition:.18s ease}.field::placeholder{color:var(--text-muted)}.field:focus{border-color:color-mix(in srgb,var(--accent) 55%,var(--border-primary));box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 9%,transparent)}
+.card{border-radius:16px;border:1px solid color-mix(in srgb,var(--border-primary) 72%,transparent);background:linear-gradient(150deg,color-mix(in srgb,var(--bg-surface) 98%,var(--accent) 2%),var(--bg-surface));box-shadow:0 16px 44px rgba(0,0,0,.055)}.soft-panel{border-radius:14px;border:1px solid color-mix(in srgb,var(--border-primary) 55%,transparent);background:color-mix(in srgb,var(--bg-secondary) 54%,transparent)}.scrollbar-thin::-webkit-scrollbar{width:8px;height:8px}.scrollbar-thin::-webkit-scrollbar-track{background:transparent}.scrollbar-thin::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--border-primary) 84%,transparent);border-radius:999px}.pulse-dot{box-shadow:0 0 0 0 color-mix(in srgb,var(--danger) 55%,transparent);animation:pulseRing 1.8s infinite}@keyframes pulseRing{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--danger) 40%,transparent)}70%{box-shadow:0 0 0 8px color-mix(in srgb,var(--danger) 0%,transparent)}100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--danger) 0%,transparent)}}
+
+
+/* Explicit border system: avoids currentColor/white fallbacks from utility opacity modifiers. */
+.ui-border-faint{border-color:color-mix(in srgb,var(--border-primary) 52%,transparent)!important}
+.ui-border-subtle{border-color:color-mix(in srgb,var(--border-primary) 72%,transparent)!important}
+.ui-border{border-color:var(--border-primary)!important}
+.ui-border-accent{border-color:color-mix(in srgb,var(--accent) 28%,var(--border-primary))!important}
+.ui-border-success{border-color:color-mix(in srgb,var(--success) 28%,var(--border-primary))!important}
+.ui-border-warning{border-color:color-mix(in srgb,var(--warning) 28%,var(--border-primary))!important}
+.ui-border-danger{border-color:color-mix(in srgb,var(--danger) 30%,var(--border-primary))!important}
+.ui-border-purple{border-color:color-mix(in srgb,var(--purple) 28%,var(--border-primary))!important}
+.ui-map-glass-border{border-color:rgba(220,240,244,.12)!important}
+
+/* Premium dark-shell dividers should read as structure, never bright outlines. */
+.dark .app-shell-divider{border-color:#142A33!important}
+.dark .app-control-border{border-color:#1B3540!important}
+.dark .card{border-color:#183039}
+.dark .soft-panel{border-color:#162B33}
+
+.dark .info-accent-panel{background:linear-gradient(90deg,rgba(57,198,216,.055),rgba(57,198,216,.018));}
+
+
+/* Search controls: explicit padding prevents the icon from colliding with placeholder text. */
+.search-input{
+  padding-left:2.55rem!important;
+  padding-right:1rem!important;
+  background:color-mix(in srgb,var(--bg-surface) 91%,var(--bg-elevated) 9%)!important;
+  border-color:color-mix(in srgb,var(--border-primary) 88%,transparent)!important;
+}
+.search-input:hover{
+  border-color:color-mix(in srgb,var(--accent) 24%,var(--border-primary))!important;
+}
+.search-input:focus{
+  background:var(--bg-surface)!important;
+  border-color:color-mix(in srgb,var(--accent) 58%,var(--border-primary))!important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 8%,transparent)!important;
+}
+.search-input::placeholder{
+  color:color-mix(in srgb,var(--text-muted) 90%,transparent);
+}
+
+/* Give dashboard context panels a distinct elevated plane. */
+.context-card{
+  border-radius:16px;
+  background:linear-gradient(
+    145deg,
+    color-mix(in srgb,var(--bg-elevated) 96%,var(--accent) 4%),
+    color-mix(in srgb,var(--bg-surface) 90%,var(--bg-secondary) 10%)
+  );
+  box-shadow:0 14px 34px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.018);
+}
+.context-card-purple{
+  box-shadow:inset 2px 0 0 color-mix(in srgb,var(--purple) 80%,transparent),0 14px 34px rgba(0,0,0,.10);
+}
+.context-card-accent{
+  box-shadow:inset 2px 0 0 color-mix(in srgb,var(--accent) 82%,transparent),0 14px 34px rgba(0,0,0,.10);
+}
+.dark .context-card{
+  background:linear-gradient(145deg,#13262E 0%,#102128 56%,#0E1C22 100%);
+}
+
+/* Sidebar navigation scrolls independently so Settings never collides with the feed card. */
+.sidebar-menu-scroll{
+  min-height:0;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+}
+.sidebar-menu-scroll::-webkit-scrollbar{width:5px}
+.sidebar-menu-scroll::-webkit-scrollbar-track{background:transparent}
+.sidebar-menu-scroll::-webkit-scrollbar-thumb{
+  background:color-mix(in srgb,var(--accent) 24%,var(--border-primary));
+  border-radius:999px;
+}
+.sidebar-menu-scroll::-webkit-scrollbar-thumb:hover{
+  background:color-mix(in srgb,var(--accent) 40%,var(--border-primary));
+}
+
+/* Do not preserve a previous viewport anchor between route layouts. */
+html,body{overflow-anchor:none;}

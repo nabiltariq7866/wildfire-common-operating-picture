@@ -1,0 +1,8 @@
+{
+  "type": "Feature",
+  "properties": {"source": "mock-satellite-perimeter", "incidentId": "INC-198"},
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [[[37,41],[45,33],[56,34],[65,43],[63,55],[54,64],[41,61],[34,52],[37,41]]]
+  }
+}
