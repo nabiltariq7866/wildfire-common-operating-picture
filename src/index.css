@@ -200,3 +200,96 @@ html,body{overflow-anchor:none;}
   color:var(--map-glass-text);
   backdrop-filter:blur(10px);
 }
+
+
+/* Premium application scrollbar — replaces the browser-default grey/white UI. */
+html{
+  scrollbar-width:thin;
+  scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);
+}
+body,
+#root,
+main{
+  scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+main::-webkit-scrollbar{
+  width:9px;
+  height:9px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+#root::-webkit-scrollbar-track,
+main::-webkit-scrollbar-track{
+  background:var(--scrollbar-track);
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+#root::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb{
+  min-height:52px;
+  border:2px solid var(--scrollbar-track);
+  border-radius:999px;
+  background:var(--scrollbar-thumb);
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+#root::-webkit-scrollbar-thumb:hover,
+main::-webkit-scrollbar-thumb:hover{
+  background:var(--scrollbar-thumb-hover);
+}
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
+#root::-webkit-scrollbar-corner,
+main::-webkit-scrollbar-corner{
+  background:var(--scrollbar-track);
+}
+
+/* Internal scroll areas inherit the same polished scrollbar treatment. */
+.scrollbar-thin{
+  scrollbar-width:thin;
+  scrollbar-color:var(--scrollbar-thumb) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar{
+  width:7px;
+  height:7px;
+}
+.scrollbar-thin::-webkit-scrollbar-track{
+  background:transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb{
+  border:1px solid transparent;
+  border-radius:999px;
+  background:var(--scrollbar-thumb);
+  background-clip:padding-box;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover{
+  background:var(--scrollbar-thumb-hover);
+  background-clip:padding-box;
+}
+
+/* Sidebar nav still scrolls, but no visible rail is shown there. */
+.sidebar-menu-scroll{
+  scrollbar-width:none!important;
+  -ms-overflow-style:none;
+}
+.sidebar-menu-scroll::-webkit-scrollbar{
+  width:0!important;
+  height:0!important;
+  display:none!important;
+}
+
+
+/* Dedicated scrollbar palette for both themes. */
+:root,.light{
+  --scrollbar-track:#E7EFF1;
+  --scrollbar-thumb:#A7C0C6;
+  --scrollbar-thumb-hover:#7EAAB3;
+}
+.dark{
+  --scrollbar-track:#0A151A;
+  --scrollbar-thumb:#294650;
+  --scrollbar-thumb-hover:#39707B;
+}
